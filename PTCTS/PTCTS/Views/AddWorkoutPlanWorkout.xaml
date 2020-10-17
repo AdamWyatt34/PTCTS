@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.AddWorkoutPlanWorkout">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Select Workout to Add" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            <ListView x:Name="selectedWorkout" Margin="17,0,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding name}" FontSize="16" TextColor="Black"/>
+                                <Label Text="{Binding description}" FontSize="12" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Vertical">
+                <Button Text="Save" Clicked="saveWorkoutButtonClick" TextColor="White" BackgroundColor="Blue"/>
+                <Button Text="Back to Main Menu" Clicked="backToMainMenuButtonClick" TextColor="White" BackgroundColor="Gray"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

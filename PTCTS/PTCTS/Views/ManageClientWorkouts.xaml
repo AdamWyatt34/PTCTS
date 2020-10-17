@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.ManageClientWorkouts">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Workout" Clicked="addWorkout" Order="Secondary"/>
+        <ToolbarItem Text="Add Workout Plan" Clicked="addWorkoutPlan" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<Label Text="Manage Client Workouts" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>-->
+            <Label Text="Pending Workouts" TextColor="Black" FontSize="14"/>
+            <ListView x:Name="pendingWorkouts" HeightRequest="950" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True" Height="100">
+                            <StackLayout>
+                                <Label Text="{Binding name}" x:Name="workoutName" Style="{StaticResource defaultBindingLabel}"/>
+                                <Label Text="{Binding description}" x:Name="workoutDescription" Style="{StaticResource defaultBindingLabel}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Scheduled Date: " Style="{StaticResource defaultLabel}"/>
+                                    <Label Text="{Binding scheduledDate, StringFormat='{0:MMMM dd, yyyy}'}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--Break out Add Workouts into separate forms?-->
+            <StackLayout Orientation="Horizontal">
+                <Button Text="View Workout" Clicked="viewWorkoutButtonClick" BackgroundColor="Blue" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Delete Workout" Clicked="deleteWorkoutButtonClick" BackgroundColor="Gray" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <Button Text="Mark Workout Complete" Clicked="markWorkoutCompleteButtonClick" BackgroundColor="Blue" TextColor="White"/>
+            <Button Text="Change Workout Date" Clicked="changeWorkoutDateButtonClick"  BackgroundColor="Orange" TextColor="White"/>
+            <!--<Button Text="Add Workouts" Clicked="addWorkoutsButtonClick" BackgroundColor="Blue" TextColor="White"/>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

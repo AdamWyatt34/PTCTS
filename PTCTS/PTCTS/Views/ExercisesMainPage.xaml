@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.ExercisesMainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Exercise" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search Exercises" TextChanged="SearchBar_TextChanged"/>
+            <ScrollView Orientation="Vertical">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <ListView x:Name="exercisesListView" Margin="5,0,0,30" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell IsEnabled="True" Height="75">
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Name: " Style="{StaticResource Key=defaultLabel}"/>
+                                            <Label Text="{Binding exerciseName}" Style="{StaticResource Key=defaultBindingLabel}"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Excercise Type: " x:Name="exceriseType" Style="{StaticResource Key=defaultLabel}"/>
+                                            <Label Text="{Binding exerciseType}" Style="{StaticResource Key=defaultBindingLabel}"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Equipment: " x:Name="equipment" Style="{StaticResource Key=defaultLabel}"/>
+                                            <Label Text="{Binding equipment}" Style="{StaticResource Key=defaultBindingLabel}"/>
+                                        </StackLayout>
+                                        <BoxView HeightRequest="1" Color="Black"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

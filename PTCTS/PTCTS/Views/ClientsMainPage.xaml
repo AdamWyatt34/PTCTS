@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.ClientsMainPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Client" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search Clients" TextChanged="SearchBar_TextChanged"/>
+            <StackLayout VerticalOptions="Center">
+                <ListView x:Name="clientsListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="True">
+                                <StackLayout Spacing="0" Margin="5,0,0,0">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Name: " Style="{StaticResource Key=defaultLabel}"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding fName}" x:Name="clientFName" Style="{StaticResource Key=defaultBindingLabel}"/>
+                                            <Label Text="{Binding lName}" x:Name="clientLName" Style="{StaticResource Key=defaultBindingLabel}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Date of Birth: " Style="{StaticResource Key=defaultLabel}"/>
+                                        <Label Text="{Binding dateOfBirth, StringFormat='{0:MMMM dd, yyyy}'}" x:Name="clientDateOfBirth" Style="{StaticResource Key=defaultBindingLabel}"/>
+                                    </StackLayout>
+                                    <BoxView HeightRequest="1" Color="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

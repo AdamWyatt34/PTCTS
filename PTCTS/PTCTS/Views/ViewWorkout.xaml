@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.ViewWorkout">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<Label Text="View Client Workout" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>-->
+            <TableView HeightRequest="950">
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name: " TextColor="Blue"/>
+                            <Label x:Name="workoutName" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Description: " TextColor="Blue"/>
+                            <Label x:Name="workoutDescription" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Equipment Needed: " TextColor="Blue"/>
+                            <Label x:Name="workoutEquipment" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Estimated Minutes" TextColor="Blue"/>
+                            <Label x:Name="workoutMinutes" TextColor="Black"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
+            <ListView x:Name="viewWorkoutExercises" Margin="17,0,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding exerciseName}" TextColor="Black" FontSize="11" FontAttributes="Bold"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding sets}"/>
+                                    <Label Text=" sets, "/>
+                                    <Label Text="{Binding reps}"/>
+                                    <Label Text=" "/>
+                                    <Label Text="{Binding repTimeUnit}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

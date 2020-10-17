@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.EditWorkoutPlan">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Edit Workout Plan" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            <TableView>
+                <TableSection>
+                    <EntryCell Label="Name: " x:Name="workoutPlanName" LabelColor="Blue"/>
+                    <EntryCell Label="Description: " x:Name="workoutPlanDescription" LabelColor="Blue"/>
+                    <ViewCell>
+                        <StackLayout Style="{StaticResource stackLayouts}">
+                            <Label Text="Plan Level: " VerticalOptions="Center" TextColor="Blue" Margin="17,0,0,0"/>
+                            <Picker x:Name="workoutPlanLevel" Title="Select Plan Level" WidthRequest="250"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Style="{StaticResource stackLayouts}">
+                            <Label Text="Plan Type: " VerticalOptions="Center" TextColor="Blue" Margin="17,0,0,0"/>
+                            <Picker x:Name="workoutPlanType" Title="Select Plan Type" WidthRequest="250"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
+            <ListView x:Name="workoutPlanWorkouts" Margin="17,0,0,0" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True" Height="50">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding workoutName}"/>
+                                <Label Text="{Binding workoutDescription}"/>
+                                <BoxView HeightRequest="1" Color="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Add Workout" Clicked="addWorkoutButtonClick" BackgroundColor="Blue" TextColor="White" />
+                <Button Text="Delete Workout" Clicked="deleteWorkoutButtonClick" BackgroundColor="Gray" TextColor="White"/>
+            </StackLayout>
+            <Button Text="Delete Workout Plan" Clicked="deleteWorkoutPlanButtonClick" BackgroundColor="Gray" TextColor="White"/>
+            <Button Text="Save Workout Plan" Clicked="saveWorkoutPlanButtonClick"  BackgroundColor="Blue" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

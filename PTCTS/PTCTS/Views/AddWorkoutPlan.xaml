@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.AddWorkoutPlan">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Add Workout Plan" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            <TableView>
+                <TableSection>
+                    <EntryCell Label="Name: " x:Name="workoutPlanName" LabelColor="Blue"/>
+                    <EntryCell Label="Description: " x:Name="workoutPlanDescription" LabelColor="Blue"/>
+                    <ViewCell>
+                        <StackLayout Style="{StaticResource stackLayouts}">
+                            <Label Text="Plan Level: " VerticalOptions="Center" TextColor="Blue" Margin="17,0,0,0"/>
+                            <Picker x:Name="workoutPlanLevel" Title="Select Plan Level" WidthRequest="250"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Style="{StaticResource stackLayouts}">
+                            <Label Text="Plan Type: " VerticalOptions="Center" TextColor="Blue" Margin="17,0,0,0"/>
+                            <Picker x:Name="workoutPlanType" Title="Select Plan Type" WidthRequest="250"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
+            <Button Text="Save Plan and Add Workouts" Clicked="savePlanButtonClick"  BackgroundColor="Blue" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

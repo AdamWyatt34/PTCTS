@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:MyTabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:PTCTS.Views"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.MainPage">
+    <!--Pages can be added as references or inline-->
+    <!--<NavigationPage Title="Clients">
+        <x:Arguments>
+            <local:ClientsMainPage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Workout Plans">
+        <x:Arguments>
+            <local:WorkoutPlansMainPage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Workouts">
+        <x:Arguments>
+            <local:WorkoutsMainPage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Exercises">
+        <x:Arguments>
+            <local:ExercisesMainPage/>
+        </x:Arguments>
+    </NavigationPage>-->
+</local:MyTabbedPage>

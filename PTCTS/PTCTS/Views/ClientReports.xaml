@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.ClientReports">
+    <!--xmlns:local="clr-namespace:Microcharts.Forms"-->
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Select Report: " TextColor="Blue" VerticalOptions="Center"/>
+                <Picker x:Name="reportPicker" SelectedIndexChanged="reportPicker_SelectedIndexChanged" WidthRequest="200"/>
+            </StackLayout>
+            <StackLayout HeightRequest="350">
+                <Label Text="chartView" x:Name="chartViewTitle" IsVisible="False" TextColor="Black" FontSize="18" HorizontalOptions="Center"/>
+                <microcharts:ChartView x:Name="chartView" IsVisible="False" HeightRequest="300" BackgroundColor="Transparent"/>
+            </StackLayout>
+            <ListView x:Name="chartDataListView" IsVisible="False">
+                <ListView.Header>
+                    <Grid BackgroundColor="Black" ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="column1" Text="column1" HorizontalOptions="Fill" Grid.Column="0" FontSize="Medium" FontAttributes="Bold" BackgroundColor="MediumBlue" TextColor="White" HorizontalTextAlignment="Center" Margin="1"/>
+                        <Label x:Name="column2" Text="column2" HorizontalOptions="Fill" Grid.Column="1" FontSize="Medium" FontAttributes="Bold" BackgroundColor="MediumBlue" TextColor="White" HorizontalTextAlignment="Center" Margin="1"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="Black" ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text ="{Binding measurementDate,StringFormat ='{0:MMMM dd, yyyy}'}" HorizontalOptions="Fill" BackgroundColor="LightBlue" HorizontalTextAlignment="Center" Margin="1"></Label>
+                                <Label Grid.Column="1" Text ="{Binding weight}" HorizontalOptions="Fill" BackgroundColor="LightBlue" HorizontalTextAlignment="Center" Margin="1"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

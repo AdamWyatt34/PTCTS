@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.AddClientMeasurements">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Measurement Date: " TextColor="Blue" VerticalOptions="Center"/>
+                <DatePicker x:Name="clientMeasurementDate"/>
+            </StackLayout>
+            <TableView>
+                <TableSection>
+                    <EntryCell Label="Enter New Weight: " x:Name="clientNewWeight" Keyboard="Numeric" LabelColor="Blue"/>
+                    <EntryCell Label="Enter New Body Fat %" x:Name="clientBodyFatPercentage" Keyboard="Numeric" LabelColor="Blue"/>
+                </TableSection>
+            </TableView>
+            <Button Text="Save Measurement" Clicked="saveMeasurementButtonClicked" BackgroundColor="Blue" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

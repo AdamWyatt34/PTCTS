@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.Login">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="50">
+            <Label Text="Welcome to PTCTS!"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Title" TextColor="Black"/>
+            <StackLayout Orientation="Vertical" Padding="5" Spacing="5">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Username:" VerticalOptions="Center"/>
+                    <Entry Placeholder="Username" x:Name="username" WidthRequest="200"/>
+                </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Password:" VerticalOptions="Center"/>
+                <Entry IsPassword="True" x:Name="password" WidthRequest="200"/>
+            </StackLayout>
+                <StackLayout Padding="10" Spacing="35">
+                    <Button Text="Login" Clicked="Button_Clicked" BackgroundColor="LightBlue" VerticalOptions="Center"/>
+                </StackLayout>
+             </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

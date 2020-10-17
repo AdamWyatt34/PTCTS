@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.EditExercise">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Edit Exercise" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            <TableView>
+                <TableSection>
+                    <EntryCell Label="Name: " x:Name="exerciseName" LabelColor="Blue"/>
+                    <EntryCell Label="Description: " x:Name="exerciseDescription" LabelColor="Blue"/>
+                    <ViewCell>
+                        <StackLayout Style="{StaticResource stackLayouts}">
+                            <Label Text="Exercise Type" VerticalOptions="Center" TextColor="Blue" Margin="17,0,0,0"/>
+                            <Picker x:Name="exerciseType" Title="Select Type" WidthRequest="250"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Style="{StaticResource stackLayouts}">
+                            <Label Text="Equipment Needed: " VerticalOptions="Center" TextColor="Blue" Margin="17,0,0,0"/>
+                            <Picker x:Name="equipment" Title="Select Equipment" WidthRequest="250"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
+            <Button Text="Delete" Clicked="Button_Clicked_1" BackgroundColor="Gray" TextColor="White"/>
+            <Button Text="Save" Clicked="Button_Clicked"  BackgroundColor="Blue" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

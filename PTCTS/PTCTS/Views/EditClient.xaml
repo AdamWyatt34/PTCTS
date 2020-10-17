@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.EditClient">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Reports" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView>
+                <TableSection>
+                    <EntryCell Label="First Name: " x:Name="firstName"/>
+                    <EntryCell Label="Last Name: " x:Name="lastName"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Date of Birth: " TextColor="Blue" VerticalOptions="Center" Margin="17,0,0,0"/>
+                            <DatePicker Margin="17,0,0,0" x:Name="dateOfBirth"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Short Term Goal: " Margin="17,0,0,0" TextColor="Blue" VerticalOptions="Center"/>
+                            <Editor IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" x:Name="shortTermGoal" WidthRequest="200"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Long Term Goal: " Margin="17,0,0,0" TextColor="Blue" VerticalOptions="Center"/>
+                            <Editor IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" x:Name="longTermGoal" WidthRequest="200"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Activity Level: " Margin="17,0,0,0" TextColor="Blue" VerticalOptions="Center"/>
+                            <Picker Title="Activity Level" x:Name="activityLevel"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
+            <Button Text="Measurements" Clicked="measurementsButtonClick" BackgroundColor="Red" TextColor="White"/>
+            <Button Text="Workouts" Clicked="workoutsButtonClick" BackgroundColor="Orange" TextColor="White"/>
+            <Button Text="Save" Clicked="saveClientButtonClick" BackgroundColor="Blue" TextColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

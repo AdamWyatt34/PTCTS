@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PTCTS.Views.AddWorkoutExercise">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Select Exercise to Add" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            <ListView x:Name="selectedExercise">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding exerciseName}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <BoxView HeightRequest="1" Color="Black"/>
+            <TableView>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Select Exercise Type" Style="{StaticResource defaultLabel}" VerticalOptions="Center"/>
+                            <Picker Title="Exercise Type" WidthRequest="250" x:Name="exerciseType" SelectedIndexChanged="exerciseType_SelectedIndexChanged"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <EntryCell Label="Sets:" Placeholder="3" x:Name="setsEntryCell" Keyboard="Numeric"/>
+                    <EntryCell Label="Reps: " Placeholder="8" x:Name="repsEntryCell" Keyboard="Numeric"/>
+                    <ViewCell>
+                        <StackLayout IsVisible="false" Orientation="Horizontal" x:Name="timeTypeStackLayout">
+                            <Label Text="Time Type" Style="{StaticResource defaultLabel}" VerticalOptions="Center"/>
+                            <Picker Title="Time Type" WidthRequest="250" x:Name="exerciseTimeType"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Save" Clicked="saveExerciseButtonClick" TextColor="White" BackgroundColor="Blue"/>
+                <Button Text="Back to Main Menu" Clicked="Button_Clicked" TextColor="White" BackgroundColor="Gray"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
